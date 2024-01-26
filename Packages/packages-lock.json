@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.roxdevvv.unityblendercontrol": {
+      "version": "https://github.com/RoxDevvv/Unity-Blender-Control-Style.git?path=/Assets/UnityBlenderControl",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "fc8070b3f776a250970439692f181a2b76b219a1"
+    },
     "com.unity.collab-proxy": {
       "version": "2.2.0",
       "depth": 0,
