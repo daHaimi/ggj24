@@ -22,7 +22,9 @@ public class GlobalDataSo : ScriptableObject
     #endregion
 
     public GameController GameController;
+    public SpeechBubbleController SpeechBubbleController;
 
+    public SpeechBubble PrefabSpeechBubble;
 
     // Global static vars
     public const string TAG_INTERACTABLE = "Interactable";

@@ -2,7 +2,16 @@ using UnityEngine;
 
 public class CharController : MonoBehaviour
 {
-    private InputController _input;
+    #region singleton
+    public static CharController Instance;
+
+    public CharController()
+    {
+        Instance = this;
+    }
+    #endregion
+
+    public InputController Input;
 
     public float MoveSpeed = 7f;
     public float JumpForce = 500f;
@@ -13,7 +22,7 @@ public class CharController : MonoBehaviour
 
     void Start()
     {
-        _input = GetComponent<InputController>();
+        Input = GetComponent<InputController>();
 
         _forward = Camera.main.transform.forward;
         _forward.y = 0;
@@ -34,8 +43,8 @@ public class CharController : MonoBehaviour
 
     private void Move()
     {
-        var rightMovement = _right * MoveSpeed * Time.deltaTime * _input.Horizontal;
-        var upMovement = _forward * MoveSpeed * Time.deltaTime * _input.Vertical;
+        var rightMovement = _right * MoveSpeed * Time.deltaTime * Input.Horizontal;
+        var upMovement = _forward * MoveSpeed * Time.deltaTime * Input.Vertical;
         var heading = Vector3.Normalize(rightMovement + upMovement);
         //transform.forward = heading;
         _rigidbody.AddForce((heading * MoveSpeed) - _rigidbody.velocity, ForceMode.VelocityChange);
@@ -43,7 +52,7 @@ public class CharController : MonoBehaviour
 
     private void Interact()
     {
-        if(_input.Interact)
+        if(Input.Interact)
         {
             var colliders = Physics.OverlapSphere(transform.position, InteractionRadius);
 
