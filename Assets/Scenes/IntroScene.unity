@@ -833,6 +833,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 184068, guid: 38af48056e3b9724c8127011f5994e37, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 170763539}
+    - targetCorrespondingSourceObject: {fileID: 184068, guid: 38af48056e3b9724c8127011f5994e37, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 170763538}
   m_SourcePrefab: {fileID: 100100000, guid: 38af48056e3b9724c8127011f5994e37, type: 3}
 --- !u!1 &170763537 stripped
@@ -840,8 +843,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 184068, guid: 38af48056e3b9724c8127011f5994e37, type: 3}
   m_PrefabInstance: {fileID: 170763536}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &170763538
-SphereCollider:
+--- !u!114 &170763538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170763537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01c7a8ce0de7ad4e98707f3b089b9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentLines:
+  - Caw, caw, caw.
+  - Caw! (mockingly)
+  OnConversationEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  CloseOnDistance: 3
+--- !u!65 &170763539
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -859,8 +881,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.38
-  m_Center: {x: 0.00000001490116, y: 0.24255326, z: -0.097779535}
+  m_Size: {x: 2.974825, y: 3.0565815, z: 1.5815127}
+  m_Center: {x: 0.07032886, y: 1.5273795, z: -0.58695734}
 --- !u!1001 &177492317
 PrefabInstance:
   m_ObjectHideFlags: 0
