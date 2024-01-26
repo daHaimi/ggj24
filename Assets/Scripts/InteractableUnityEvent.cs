@@ -10,11 +10,6 @@ public class InteractableUnityEvent : Interactable
 {
     public UnityEvent OnInteraction = new();
 
-    void Start()
-    {
-        gameObject.tag = GlobalDataSo.TAG_INTERACTABLE;
-    }
-
     public override void Interact()
     {
         OnInteraction.Invoke();
