@@ -72,7 +72,6 @@ public class CharController : MonoBehaviour
         var heading = Vector3.Normalize(rightMovement + upMovement);
         if (heading.magnitude > .001)
         {
-            Debug.Log(heading);
             PlayerFigure.rotation = Quaternion.LookRotation(heading);
         }
 

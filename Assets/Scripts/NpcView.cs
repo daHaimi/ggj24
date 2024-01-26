@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class NpcView : MonoBehaviour
 {
+    public float height = 1.7f;
     public float horizontalAngle = 90.0f;
     public float verticalAngle = 20.0f;
     public uint scanDensity = 5;
@@ -20,10 +21,9 @@ public class NpcView : MonoBehaviour
         Vector3 forward = transform.forward;
         for (int i = 0; i <= scanDensity; i++)
         {
-            
             for (var j = 0; j <= vScanDensity; j++) 
                 if (Physics.Raycast(
-                    transform.position,
+                    transform.position + (Vector3.up * height),
                     Quaternion.Euler(vStartAngle + (j * vAnglePerStep), startAngle + (i * anglePerStep), 0) * forward,
                     out RaycastHit hitInfo,
                     viewDistance,
@@ -47,7 +47,7 @@ public class NpcView : MonoBehaviour
         for (var i = 0; i <= scanDensity; i++)
         {
             for (var j = 0; j <= vScanDensity; j++)
-                Debug.DrawRay(transform.position,
+                Debug.DrawRay(transform.position + (Vector3.up * height),
                     Quaternion.Euler(vStartAngle + (j * vAnglePerStep), hStartAngle + (i * hAnglePerStep), 0) * forward *
                     viewDistance, Color.green);
         }
