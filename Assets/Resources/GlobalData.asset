@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GlobalData
   m_EditorClassIdentifier: 
   GameController: {fileID: 8657057538658009163, guid: 63ecd97ec6ee47a4a818fdae665f47ca, type: 3}
+  AudioController: {fileID: 3718205308177696432, guid: 57ae174307c912a4f8256694fdd072a4, type: 3}
   SpeechBubbleController: {fileID: 5259531508783425358, guid: 5321a7628f4a93e41ac6638cfc5b3220, type: 3}
   PrefabSpeechBubble: {fileID: 5458421839832155032, guid: 11d6bf9bd1a161b409e868428312ece4, type: 3}
