@@ -1,54 +1,58 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharController : MonoBehaviour
 {
-    public float moveSpeed = 7f;
-    public float jumpForce = 500f;
+    private InputController _input;
 
-    private const float gravity = 9.81f;
-    
-    private Vector3 forward, right;
-    private Rigidbody body;
-    private bool isFalling;
+    public float MoveSpeed = 7f;
+    public float JumpForce = 500f;
+    public float InteractionRadius = 3;
 
-    // Start is called before the first frame update
+    private Vector3 _forward, _right;
+    private Rigidbody _rigidbody;
+
     void Start()
     {
-        forward = Camera.main.transform.forward;
-        forward.y = 0;
-        forward = Vector3.Normalize(forward);
-        right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
-        body = GetComponent<Rigidbody>();
+        _input = GetComponent<InputController>();
+
+        _forward = Camera.main.transform.forward;
+        _forward.y = 0;
+        _forward = Vector3.Normalize(_forward);
+        _right = Quaternion.Euler(new Vector3(0, 90, 0)) * _forward;
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    void Update()
+    {
+        Interact();
+    }
+
     void FixedUpdate()
     {
-        if (Input.anyKey)
-        {
-            Move();
-        }
+        Move();
     }
 
     private void Move()
     {
-        if (Input.GetButtonDown("Jump") && !isFalling)
-        {
-            body.AddForce(Vector3.up * jumpForce,ForceMode.Impulse);
-            isFalling = true;
-        }
-        var rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal Key");
-        var upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("Vertical Key");
+        var rightMovement = _right * MoveSpeed * Time.deltaTime * _input.Horizontal;
+        var upMovement = _forward * MoveSpeed * Time.deltaTime * _input.Vertical;
         var heading = Vector3.Normalize(rightMovement + upMovement);
         //transform.forward = heading;
-        body.AddForce((heading * moveSpeed) - body.velocity, ForceMode.VelocityChange);
+        _rigidbody.AddForce((heading * MoveSpeed) - _rigidbody.velocity, ForceMode.VelocityChange);
     }
 
-    private void OnCollisionStay(Collision collisionInfo)
+    private void Interact()
     {
-        isFalling = false;
+        if(_input.Interact)
+        {
+            var colliders = Physics.OverlapSphere(transform.position, InteractionRadius);
+
+            Interactable? interactable = null;
+            foreach (Collider collider in colliders)
+                if (collider.CompareTag(GlobalDataSo.TAG_INTERACTABLE))
+                    interactable = collider.gameObject.GetComponent<Interactable>();
+
+            interactable?.Interact();
+        }
     }
 }
