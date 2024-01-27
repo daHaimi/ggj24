@@ -19,6 +19,9 @@ public class InteractableConversation : Interactable
     // hacky way to do a timeout :P
     private float _nextContentLineTimeout;
 
+    /// <summary>
+    /// Player can interact and start a Conversation.
+    /// </summary>
     public override void Interact()
     {
         if (_conversationTriggered)
@@ -50,6 +53,10 @@ public class InteractableConversation : Interactable
         }
     }
 
+    /// <summary>
+    /// Display the next content line.
+    /// If the last content line is reached, the conversation will be closed.
+    /// </summary>
     private void NextContentLine()
     {
         if (_nextContentLineTimeout > 0)

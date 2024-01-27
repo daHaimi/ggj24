@@ -10,6 +10,9 @@ public class InteractableUnityEvent : Interactable
 {
     public UnityEvent OnInteraction = new();
 
+    /// <summary>
+    /// Player can interact and trigger a UnityEvent.
+    /// </summary>
     public override void Interact()
     {
         OnInteraction.Invoke();
