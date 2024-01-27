@@ -22,7 +22,19 @@ public class UiIngameController : MonoBehaviour
     [SerializeField]
     private Slider _sliderLaughMeter;
     [SerializeField]
+    private Slider _sliderItemUsage;
+    [SerializeField]
+    private Image _sliderItemUsageImage;
+    [SerializeField]
     private Transform _panelItems;
+
+    private bool _itemUsageShown;
+
+    void Start()
+    {
+        // Scale to 0 so we can animate lazily later
+        _sliderItemUsage.transform.localScale = Vector3.zero;
+    }
 
     void LateUpdate()
     {
@@ -57,11 +69,37 @@ public class UiIngameController : MonoBehaviour
     /// </summary>
     /// <param name="item">The item to remove</param>
     public void RemoveItemIcon(ItemSo item)
-        {
+    {
         if (itemDictionary.ContainsKey(item))
         {
             Destroy(itemDictionary[item].gameObject);
             itemDictionary.Remove(item);
         }
+    }
+
+    /// <summary>
+    /// Show the given item usage for a specific item.
+    /// </summary>
+    /// <param name="item">The item to show</param>
+    /// <param name="value">The value between 0 and 1 to show. Value 1 hides the slider.</param>
+    public void ShowItemUsage(ItemSo item, float value)
+    {
+        if ((value == 0 || value == 1) && _itemUsageShown)
+        {
+            LeanTween.cancel(_sliderItemUsage.gameObject);
+            LeanTween.scale(_sliderItemUsage.gameObject, Vector3.zero, 0.3f)
+                .setEaseOutSine();
+            _itemUsageShown = false;
+        }
+        else if (!_itemUsageShown)
+        {
+            LeanTween.cancel(_sliderItemUsage.gameObject);
+            LeanTween.scale(_sliderItemUsage.gameObject, Vector3.one, 0.3f)
+                .setEaseOutSine();
+            _itemUsageShown = true;
+        }
+
+        _sliderItemUsageImage.sprite = item.Icon;
+        _sliderItemUsage.value = value;
     }
 }
