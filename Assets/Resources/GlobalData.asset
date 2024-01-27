@@ -16,4 +16,8 @@ MonoBehaviour:
   SceneTransitionController: {fileID: 8423297409207223674, guid: b7c94c79e59152b4d85f5f931296a382, type: 3}
   AudioController: {fileID: 3718205308177696432, guid: 57ae174307c912a4f8256694fdd072a4, type: 3}
   SpeechBubbleController: {fileID: 5259531508783425358, guid: 5321a7628f4a93e41ac6638cfc5b3220, type: 3}
-  PrefabSpeechBubble: {fileID: -6814112650051815592, guid: d622918835e38cf47a8e583cf85f4fec, type: 3}
+  PrefabSpeechBubble: {fileID: 5458421839832155032, guid: 11d6bf9bd1a161b409e868428312ece4, type: 3}
+  PrefabPanelItem: {fileID: 1954360089585799387, guid: 6a36ffbd2f6d7e040813eb31a88b7507, type: 3}
+  SfxSceneTransition: {fileID: 8300000, guid: 9e3eb525b7cc9c344b4fc1a2cbb37cd2, type: 3}
+  SfxPickupItem: {fileID: 8300000, guid: 6c2f000cffabebb488140072ccfb4c4a, type: 3}
+  SfxDropItem: {fileID: 8300000, guid: cd91bd5b57ae74141beafc5809328c0f, type: 3}

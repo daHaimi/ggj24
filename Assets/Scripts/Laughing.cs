@@ -5,20 +5,44 @@ using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
-/// <summary>
-/// Simple Interactable that invokes a Unity Event.
-/// </summary>
+[RequireComponent(typeof(AudioSource))]
 public class Laughing : MonoBehaviour
 {
     public Canvas smileyCanvas;
     public List<GameObject> contents;
 
+    /// <summary>
+    /// Laugh meter from 0-10
+    /// </summary>
+    public float LaughMeterMax = 10;
+    public float LaughMeter = 10;
+
     private bool _laughingActive = false;
     private GameObject _actualSmiley;
 
+    private AudioSource _audioSource;
+
+    void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.Pause();
+    }
+
+    void Update()
+    {
+        if (_laughingActive)
+        {
+            LaughMeter -= Time.deltaTime;
+            if (LaughMeter <= 0)
+                StopLaughing();
+        }
+    }
+
     public void StartLaughing()
     {
-        if (_laughingActive) return;
+        if (_laughingActive || LaughMeter <= 0) return;
+
+        _audioSource.Play();
 
         _laughingActive = true;
         _actualSmiley = Instantiate(contents[Random.Range(0, contents.Count)], Vector3.zero, Quaternion.identity, smileyCanvas.GetComponent<RectTransform>());
@@ -30,7 +54,9 @@ public class Laughing : MonoBehaviour
     public void StopLaughing()
     {
         if (!_laughingActive) return;
-        
+
+        _audioSource.Pause();
+
         _laughingActive = false;
         Destroy(_actualSmiley);
     }

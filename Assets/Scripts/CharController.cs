@@ -14,6 +14,7 @@ public class CharController : MonoBehaviour
     #endregion
 
     public InputController Input;
+    public Laughing Laughing;
 
     public float MoveSpeed = 7f;
     public float JumpForce = 500f;
@@ -33,8 +34,8 @@ public class CharController : MonoBehaviour
     void Start()
     {
         Input = GetComponent<InputController>();
+        Laughing = GetComponent<Laughing>();
 
-        
         _cam = Camera.main;
         _forward = _cam.transform.forward;
         _forward.y = 0;
