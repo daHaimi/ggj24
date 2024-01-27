@@ -65,6 +65,9 @@ public class AudioController : BaseSceneConsistentController
 
     private void PlayNewTrack(AudioClip audioClip)
     {
+        if (audioClip == _audioSourceBgm.clip)
+            return;
+
         _audioSourceBgm.clip = audioClip;
         _audioSourceBgm.Play();
     }

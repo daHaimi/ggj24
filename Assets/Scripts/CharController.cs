@@ -21,6 +21,8 @@ public class CharController : MonoBehaviour
     public float InteractionRadius = 3;
     public Transform PlayerFigure;
 
+    public Transform InteractionMarker;
+
     public AnimatorController idleAnimation;
     public AnimatorController runAnimation;
 
@@ -30,11 +32,15 @@ public class CharController : MonoBehaviour
     private Rigidbody _rigidbody;
     private Animator _animator;
     private Laughing _laughing;
-    
+
+    private Vector3 _currentInteractionMarkerSpot;
+
     void Start()
     {
         Input = GetComponent<InputController>();
         Laughing = GetComponent<Laughing>();
+
+        InteractionMarker.SetParent(null);
 
         _cam = Camera.main;
         _forward = _cam.transform.forward;
@@ -47,7 +53,7 @@ public class CharController : MonoBehaviour
         _oldPos = PlayerFigure.position;
         _laughing = GetComponent<Laughing>();
     }
-    
+
     void Update()
     {
         Interact();
@@ -55,7 +61,8 @@ public class CharController : MonoBehaviour
         {
             _animator.runtimeAnimatorController = runAnimation;
             _wasMovingBefore = true;
-        } else if (!Input.Moving && _wasMovingBefore)
+        }
+        else if (!Input.Moving && _wasMovingBefore)
         {
             _animator.runtimeAnimatorController = idleAnimation;
             _wasMovingBefore = false;
@@ -69,9 +76,12 @@ public class CharController : MonoBehaviour
         {
             _laughing.StopLaughing();
         }
-        
+
         _cam.transform.position += _rigidbody.position - _oldPos;
         _oldPos = _rigidbody.position;
+
+        // visual effect for interaction marker
+        InteractionMarker.Rotate(Vector3.one * Time.deltaTime * 10);
     }
 
     private void FixedUpdate()
@@ -96,16 +106,37 @@ public class CharController : MonoBehaviour
     // ReSharper disable Unity.PerformanceAnalysis
     private void Interact()
     {
-        if(Input.Interact)
+        var colliders = Physics.OverlapSphere(PlayerFigure.position, InteractionRadius);
+        GameObject? colliderGo = null;
+        foreach (Collider collider in colliders)
+            if (collider.CompareTag(GlobalDataSo.TAG_INTERACTABLE))
+                colliderGo = collider.gameObject;
+
+        UpdateInteractionMarker(colliderGo?.transform.position ?? null);
+
+        if (Input.Interact)
         {
-            var colliders = Physics.OverlapSphere(PlayerFigure.position, InteractionRadius);
-
-            Interactable interactable = null;
-            foreach (Collider collider in colliders)
-                if (collider.CompareTag(GlobalDataSo.TAG_INTERACTABLE))
-                    interactable = collider.gameObject.GetComponent<Interactable>();
-
+            Interactable? interactable = null;
+            interactable = colliderGo?.gameObject.GetComponent<Interactable>();
             interactable?.Interact();
+        }
+    }
+
+    private void UpdateInteractionMarker(Vector3? position)
+    {
+
+        if (position == null)
+        {
+            InteractionMarker.gameObject.LeanCancel();
+            InteractionMarker.gameObject.LeanScale(Vector3.zero, 0.25f);
+            InteractionMarker.gameObject.LeanMove(PlayerFigure.transform.position + new Vector3(0, 10, 0), 0.25f);
+        }
+        else if (position != _currentInteractionMarkerSpot)
+        {
+            InteractionMarker.gameObject.LeanCancel();
+            InteractionMarker.gameObject.LeanScale(Vector3.one * 0.5f, 0.25f);
+            InteractionMarker.gameObject.LeanMove(position.Value + new Vector3(0, 1, 0), 0.25f)
+                .setEaseOutSine();
         }
     }
 }
