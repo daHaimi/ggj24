@@ -24,7 +24,7 @@ public class NpcView : MonoBehaviour
     {
         _viewField = new GameObject();
         _viewField.transform.parent = transform;
-        _viewField.transform.localPosition = Vector3.zero;
+        _viewField.transform.localPosition = new Vector3(0, height / 2, 0);
         _mesh = _viewField.AddComponent<MeshFilter>();
         _viewField.AddComponent<MeshRenderer>().material = Resources.Load<Material>("Marker");
         _calcValues();
@@ -40,10 +40,8 @@ public class NpcView : MonoBehaviour
     
     private Mesh _createViewfieldPolygon()
     {
-        var forward = transform.forward;
         var tris = new List<int>(); // Every 3 ints represents a triangle
         var points = new List<Vector3>(); // Vertex position in world space
-        var uvs = new List<Vector2>(); // Vertex position in 0-1 UV space
         
         // Top/Side Triangles   // Front Triangles
             /*   0                  1  2  3
@@ -62,39 +60,11 @@ public class NpcView : MonoBehaviour
                     tris.Add(0);
                     tris.Add(i + row * perRow);
                     tris.Add(i + 1 + row * perRow);
-                    points.Add(_calcPoint(i - 1, row));
+                    points.Add(_calcPoint(i - 1));
             }
-            points.Add(_calcPoint(i - 1, row));
-            row = 1;
-            for (i = 1; i < perRow; i++)
-            {
-                    tris.Add(0);
-                    tris.Add(i + 1 + row * perRow);
-                    tris.Add(i + row * perRow);
-                    points.Add(_calcPoint(i - 1, row));
-            }
-            points.Add(_calcPoint(i-1, row));
-            // Sides:
-            tris.Add(0);
-            tris.Add(1 + perRow);
-            tris.Add(1);
-            tris.Add(0);
-            tris.Add(perRow);
-            tris.Add(2 * perRow);
-            // Front
-            for (int k = 1; k < perRow; k++)
-            {
-                // Right bottom
-                tris.Add(k);
-                tris.Add(k + perRow);
-                tris.Add(k + perRow + 1);
-                // Left top
-                tris.Add(k + 1);
-                tris.Add(k);
-                tris.Add(k + perRow + 1);
-            }
+            points.Add(_calcPoint(i - 1));
 
-            Mesh mesh = new Mesh
+            var mesh = new Mesh
             {
                 vertices = points.ToArray(),
                 triangles = tris.ToArray()
@@ -103,12 +73,54 @@ public class NpcView : MonoBehaviour
             return mesh;
     }
 
-    private Vector3 _calcPoint(int x, int y)
+    private Vector3 _calcPoint(int x)
     {
-        Vector3 f = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up) * new Vector3(_vStartAngle + (y * verticalAngle) ,0, 0);
+        Vector3 f = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up) * Vector3.forward;
         f.y = _hStartAngle + (x * _hAnglePerStep);
-        var result = Quaternion.Euler(f) * transform.forward * viewDistance;
-        return result;
+        return Quaternion.Euler(f) * transform.forward * viewDistance;
+    }
+
+    public Vector3 _calcPointUntilRayHit(int x)
+    {
+        Vector3 f = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up) * Vector3.forward;
+        f.y = _hStartAngle + (x * _hAnglePerStep);
+        if (Physics.Raycast(
+                transform.position + (Vector3.up * height),
+                Quaternion.Euler(f) * transform.forward,
+                out RaycastHit hitInfo,
+                viewDistance))
+        {
+            return _viewField.transform.InverseTransformPoint(hitInfo.point);
+        }
+        return Quaternion.Euler(f) * transform.forward * viewDistance;
+    }
+
+    private void _recalcMesh()
+    {
+        var points = new List<Vector3>(); // Vertex position in world space
+        // Ursprung
+        points.Add(Vector3.zero);
+        var perRow = (int)scanDensity + 1;
+        int i;
+        for (i = 1; i < perRow; i++)
+        {
+            points.Add(_calcPointUntilRayHit(i - 1));
+        }
+        points.Add(_calcPointUntilRayHit(i - 1));
+        
+        // Set new mesh
+        _mesh.mesh = new Mesh
+        {
+            vertices = points.ToArray(),
+            triangles = _mesh.mesh.triangles
+        };
+        _mesh.mesh.RecalculateNormals();
+    }
+
+    private void Update()
+    {
+        _recalcMesh();
+        _viewField.transform.localRotation = Quaternion.Euler(0, -transform.rotation.eulerAngles.y, 0);
     }
 
     void FixedUpdate ()
@@ -121,11 +133,11 @@ public class NpcView : MonoBehaviour
                     transform.position + (Vector3.up * height),
                     Quaternion.Euler(_vStartAngle + (j * verticalAngle), _hStartAngle + (i * _hAnglePerStep), 0) * forward,
                     out RaycastHit hitInfo,
-                    viewDistance,
-                    layer))
+                    viewDistance))
                 {
-                    if (_gotOne <= 0)
+                    if (hitInfo.transform.gameObject.layer == layer && _gotOne <= 0)
                     {
+                        Debug.Log($"Du wurdest von {gameObject.name} gesehen!");
                         hitCallback.Invoke();
                         _gotOne = 5;
                         return;
