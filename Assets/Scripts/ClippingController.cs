@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ClippingController : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class ClippingController : MonoBehaviour
         if (!_clippedObject)
             return;
         
-        _clippedObject.GetComponent<MeshRenderer>().enabled = false;
+        _clippedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.ShadowsOnly ;
         
         // var objColor = new Color(1, 1, 1, 0.3f);
         // _clippedObject.GetComponent<MeshRenderer>().material.color = objColor;
@@ -70,7 +71,7 @@ public class ClippingController : MonoBehaviour
         if (!_clippedObject)
             return;
 
-        _clippedObject.GetComponent<MeshRenderer>().enabled = true;
+        _clippedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.On ;
         
         // var objColor = new Color(1, 1, 1, 1f);
         // _clippedObject.GetComponent<MeshRenderer>().material.color = objColor;
