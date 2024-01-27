@@ -1,8 +1,12 @@
+using Assets.Scripts.Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+/// <summary>
+/// Controller for Base Game Logic
+/// </summary>
+public class GameController : BaseSceneConsistentController
 {
     #region singleton
     private static GameController _cachedInstance;

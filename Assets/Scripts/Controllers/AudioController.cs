@@ -1,9 +1,10 @@
+using Assets.Scripts.Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class AudioController : MonoBehaviour
+public class AudioController : BaseSceneConsistentController
 {
     #region singleton
     private static AudioController _cachedInstance;
@@ -24,11 +25,21 @@ public class AudioController : MonoBehaviour
     [SerializeField]
     private AudioSource _audioSourceBgm;
 
+    /// <summary>
+    /// Play a sound effect once.
+    /// </summary>
+    /// <param name="audioClip">Sound effect to be played</param>
+    /// <param name="volume">The Volume it'll be played at</param>
     public void PlaySound(AudioClip audioClip, float volume = 1)
     {
         _audioSourceSfx.PlayOneShot(audioClip, volume);
     }
 
+    /// <summary>
+    /// Play a music track.
+    /// If another one is already being played, it will be faded out.
+    /// </summary>
+    /// <param name="audioClip">Music track to be playe</param>
     public void PlayMusic(AudioClip audioClip)
     {
         if (!gameObject.LeanIsTweening() && _audioSourceBgm.isPlaying)

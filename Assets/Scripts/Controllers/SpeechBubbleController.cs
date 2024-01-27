@@ -1,8 +1,14 @@
+using Assets.Scripts.Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeechBubbleController : MonoBehaviour
+/// <summary>
+/// Allows placing SpeechBubble Conversations from anywhere.
+/// A speech bubble will be connected to a GameObject;
+/// Only one conversation can be had at a time!
+/// </summary>
+public class SpeechBubbleController : BaseSceneConsistentController
 {
     #region singleton
     private static SpeechBubbleController _cachedInstance;
@@ -31,6 +37,10 @@ public class SpeechBubbleController : MonoBehaviour
     /// <summary>
     /// Place a speech bubble above a GameObject.
     /// </summary>
+    /// <param name="gameObject">Target GameObject</param>
+    /// <param name="content">Speech bubble text</param>
+    /// <param name="height">The height above the character</param>
+    /// <param name="hardOverride">Destroy ongoing conversation if necessary and force new one</param>
     public void PlaceSpeechBubble(GameObject gameObject, string content, int height = 2, bool hardOverride = false)
     {
         // Make sure there isn't already an ongoing conversation
@@ -58,6 +68,10 @@ public class SpeechBubbleController : MonoBehaviour
         _dictSpeechBubbles.Add(gameObject, speechBubble);
     }
 
+    /// <summary>
+    /// Close an existing conversation, if it exists.
+    /// </summary>
+    /// <param name="gameObject">Target GameObject</param>
     public void CloseSpeechBubble(GameObject gameObject)
     {
         if (IsInConversation(gameObject))
