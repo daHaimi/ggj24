@@ -15,6 +15,9 @@ public class InputController : MonoBehaviour
         CalculateInput();
     }
 
+    /// <summary>
+    /// Fetch player input variables
+    /// </summary>
     protected void CalculateInput()
     {
         Horizontal = Input.GetAxis("Horizontal");

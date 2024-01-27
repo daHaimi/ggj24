@@ -33,6 +33,10 @@ public class SpeechBubble : MonoBehaviour
         _text.text = Content;
     }
 
+    /// <summary>
+    /// Update Text in Speech Bubble with a short animation.
+    /// </summary>
+    /// <param name="content">New text to be displayed</param>
     public void UpdateContent(string content)
     {
         _text.text = Content = content;
@@ -44,6 +48,9 @@ public class SpeechBubble : MonoBehaviour
             .setEaseOutBounce();
     }
 
+    /// <summary>
+    /// Close and destroy the speech bubble with a short animation.
+    /// </summary>
     public void CloseSpeechBubble()
     {
         gameObject.LeanCancel();
