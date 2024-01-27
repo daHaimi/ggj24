@@ -92,13 +92,14 @@ public class CharController : MonoBehaviour
         _rigidbody.AddForce(v, ForceMode.VelocityChange);
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     private void Interact()
     {
         if(Input.Interact)
         {
             var colliders = Physics.OverlapSphere(PlayerFigure.position, InteractionRadius);
 
-            Interactable? interactable = null;
+            Interactable interactable = null;
             foreach (Collider collider in colliders)
                 if (collider.CompareTag(GlobalDataSo.TAG_INTERACTABLE))
                     interactable = collider.gameObject.GetComponent<Interactable>();
