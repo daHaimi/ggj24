@@ -24,6 +24,11 @@ public class UiIngameController : MonoBehaviour
     [SerializeField]
     private Transform _panelItems;
 
+    void LateUpdate()
+    {
+        _sliderLaughMeter.value = CharController.Instance.Laughing.LaughMeter / CharController.Instance.Laughing.LaughMeterMax;
+    }
+
     /// <summary>
     /// Holds a dictionary of all visible Items and their panels
     /// </summary>
