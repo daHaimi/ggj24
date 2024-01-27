@@ -48,13 +48,13 @@ public class SpeechBubbleController : MonoBehaviour
 
         // Instantiate new speech bubble
         var speechBubble = Instantiate(
-                PrefabSpeechBubble,
-                // place above gameObject
-                gameObject.transform.position + new Vector3(0, height, 0),
-                Quaternion.identity
-            );
+            PrefabSpeechBubble,
+            // place above gameObject
+            gameObject.transform.position + new Vector3(0, height, 0),
+            Quaternion.identity
+        );
         speechBubble.Content = content;
-
+        
         _dictSpeechBubbles.Add(gameObject, speechBubble);
     }
 

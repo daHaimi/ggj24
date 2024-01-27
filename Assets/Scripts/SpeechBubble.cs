@@ -15,12 +15,15 @@ public class SpeechBubble : MonoBehaviour
 
     void OnEnable()
     {
+        var _cam = Camera.main.transform;
         _vectorFullSize = transform.localScale;
 
         gameObject.LeanScale(_vectorFullSize, AnimationLength)
             .setFrom(Vector3.zero)
             .setEaseOutSine();
-        gameObject.LeanRotateY(Angle, AnimationLength);
+        var target = Quaternion.FromToRotation(transform.forward, transform.position - _cam.position).eulerAngles;
+        target.z = 0;
+        gameObject.LeanRotate(target, AnimationLength);
 
     }
 

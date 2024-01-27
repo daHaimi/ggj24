@@ -2666,6 +2666,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentLines:
   - Hello!
+  - Du
+  - Arsch!
   OnConversationEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -2687,7 +2689,7 @@ MonoBehaviour:
   verticalAngle: 20
   scanDensity: 5
   vScanDensity: 3
-  viewDistance: 12
+  viewDistance: 3
   layer:
     serializedVersion: 2
     m_Bits: 128
