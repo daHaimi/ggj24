@@ -21,11 +21,13 @@ public class MovePath : MonoBehaviour
     
     private NavMeshAgent agent;
     private Animator _animator;
-
+    private Transform _childTransform;
 
     private void Start()
     {
         _animator = GetComponentInChildren<Animator>();
+        _childTransform = _animator.transform;
+        Debug.Log(_childTransform.gameObject.name);
         agent = GetComponent<NavMeshAgent>();
         target = waypoints[waypointIdx].position;
         UpdateDestination();
@@ -39,7 +41,6 @@ public class MovePath : MonoBehaviour
             // Angekommen
             if (Vector3.Distance(transform.position, target) < 1)
             {
-                Debug.Log("Reached Waypoint");
                 _animator.runtimeAnimatorController = idleAnimation;
                 IterateIndex();
                 _yetToWait = waitTimeAtWaypoint;
@@ -47,7 +48,6 @@ public class MovePath : MonoBehaviour
             }
             else if (!walking)
             {
-                Debug.Log("To next Waypoint");
                 walking = true;
                 _animator.runtimeAnimatorController = walkAnimation;
                 UpdateDestination();
@@ -56,6 +56,14 @@ public class MovePath : MonoBehaviour
         else
         {
             _yetToWait -= Time.deltaTime;
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (walking)
+        {
+            _childTransform.localRotation = Quaternion.Euler(0, 0, 0);
         }
     }
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,16 +14,20 @@ public class NpcView : MonoBehaviour
     public float viewDistance = 12.0f;
     public LayerMask layer;
     public UnityEvent hitCallback;
-    public Transform viewField;
 
     private uint _gotOne = 0;
     private MeshFilter _mesh;
     private float _hStartAngle, _hAnglePerStep, _vStartAngle;
+    private GameObject _viewField;
 
     private void Start()
     {
+        _viewField = new GameObject();
+        _viewField.transform.parent = transform;
+        _viewField.transform.localPosition = Vector3.zero;
+        _mesh = _viewField.AddComponent<MeshFilter>();
+        _viewField.AddComponent<MeshRenderer>().material = Resources.Load<Material>("Marker");
         _calcValues();
-        _mesh = viewField.GetComponent<MeshFilter>();
         _mesh.mesh = _createViewfieldPolygon();
     }
 
@@ -136,8 +141,8 @@ public class NpcView : MonoBehaviour
     
     private void OnDrawGizmos()
     {
-        _calcValues();
         var forward = transform.forward;
+        _calcValues();
         for (var i = 0; i <= scanDensity; i++)
         {
             for (var j = 0; j <= 1; j++)
