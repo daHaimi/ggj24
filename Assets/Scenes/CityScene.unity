@@ -872,7 +872,7 @@ PrefabInstance:
     - target: {fileID: 7507186291218595696, guid: 4c53e60c9415266459710a5546011e95, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: a2074a59db68df4409e9c2204bcdd926, type: 2}
     - target: {fileID: 7507186291220495760, guid: 4c53e60c9415266459710a5546011e95, type: 3}
       propertyPath: m_LocalPosition.x
       value: 117.138115
@@ -916,6 +916,10 @@ PrefabInstance:
     - target: {fileID: 7507186291220849072, guid: 4c53e60c9415266459710a5546011e95, type: 3}
       propertyPath: m_Name
       value: building-block-4floor-back
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507186291220849072, guid: 4c53e60c9415266459710a5546011e95, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1241,7 +1245,7 @@ PrefabInstance:
     - target: {fileID: 455908538418105393, guid: 097b57be8da56384dab59f4e721aeeb2, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: 7a1a32bb65e9dd649863685be832d439, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1547,10 +1551,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: building-block-4floor-corner
       objectReference: {fileID: 0}
+    - target: {fileID: 4670545540547079473, guid: 41298c6ff2dd79f4485adca15b109283, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4670545540549014513, guid: 41298c6ff2dd79f4485adca15b109283, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: 363ca375f854db64f82a088a1e033297, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1567,7 +1575,7 @@ PrefabInstance:
     - target: {fileID: 8707871190122538646, guid: 2879c71fcc5ae664a9b2b60d211cc402, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: c387e6a8b2a44864c80e4e72d9095bb1, type: 2}
     - target: {fileID: 8707871190124438646, guid: 2879c71fcc5ae664a9b2b60d211cc402, type: 3}
       propertyPath: m_LocalPosition.x
       value: 137.79085
@@ -1611,6 +1619,10 @@ PrefabInstance:
     - target: {fileID: 8707871190124738646, guid: 2879c71fcc5ae664a9b2b60d211cc402, type: 3}
       propertyPath: m_Name
       value: building-block-5floor-corner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707871190124738646, guid: 2879c71fcc5ae664a9b2b60d211cc402, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1672,7 +1684,7 @@ PrefabInstance:
     - target: {fileID: 455908538418105393, guid: 097b57be8da56384dab59f4e721aeeb2, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: 1e080b3f4c032594c8d574ff2254be3d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2032,7 +2044,7 @@ PrefabInstance:
     - target: {fileID: 27067214565980805, guid: 3658e45df3d9b304abf0d1de17183555, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: 7a1a32bb65e9dd649863685be832d439, type: 2}
     - target: {fileID: 27067214567908421, guid: 3658e45df3d9b304abf0d1de17183555, type: 3}
       propertyPath: m_Name
       value: building-cafe
@@ -2252,9 +2264,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1282487425}
     m_Modifications:
+    - target: {fileID: 3286355216115689767, guid: c5de2df0b445e524392a49d3486c14a3, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: caede629d672e5d4894d74679968bcbb, type: 2}
     - target: {fileID: 3286355216117626855, guid: c5de2df0b445e524392a49d3486c14a3, type: 3}
       propertyPath: m_Name
       value: building-shop-china
+      objectReference: {fileID: 0}
+    - target: {fileID: 3286355216117626855, guid: c5de2df0b445e524392a49d3486c14a3, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3286355216117984199, guid: c5de2df0b445e524392a49d3486c14a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2389,7 +2409,7 @@ PrefabInstance:
     - target: {fileID: 455908538418105393, guid: 097b57be8da56384dab59f4e721aeeb2, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: caede629d672e5d4894d74679968bcbb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2580,6 +2600,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4462030654688888, guid: e36a871c8d6604b7ea54bdaeaf2297ab, type: 3}
   m_PrefabInstance: {fileID: 922803218}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &947047684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2022118079905057299, guid: 890abd73182cdf47aab5459b206808bc, type: 3}
+  m_PrefabInstance: {fileID: 1886753925}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &952646006 stripped
 Transform:
@@ -2790,7 +2815,7 @@ PrefabInstance:
     - target: {fileID: 8940566794350691018, guid: 39f2f927843448b4a86f44df37acc740, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: a2074a59db68df4409e9c2204bcdd926, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3148,7 +3173,7 @@ PrefabInstance:
     - target: {fileID: 455908538418105393, guid: 097b57be8da56384dab59f4e721aeeb2, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: 1e080b3f4c032594c8d574ff2254be3d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3441,7 +3466,7 @@ PrefabInstance:
     - target: {fileID: 455908538418105393, guid: 097b57be8da56384dab59f4e721aeeb2, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: caede629d672e5d4894d74679968bcbb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3502,7 +3527,7 @@ PrefabInstance:
     - target: {fileID: 455908538418105393, guid: 097b57be8da56384dab59f4e721aeeb2, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: c387e6a8b2a44864c80e4e72d9095bb1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3752,6 +3777,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 27067214568274021, guid: 3658e45df3d9b304abf0d1de17183555, type: 3}
   m_PrefabInstance: {fileID: 737769954}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1606254608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4853586992320725650, guid: 890abd73182cdf47aab5459b206808bc, type: 3}
+  m_PrefabInstance: {fileID: 1886753925}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1606254610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606254608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917aeedec1250de4ca336411b7958eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 947047684}
 --- !u!1001 &1635251149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3820,7 +3863,7 @@ PrefabInstance:
     - target: {fileID: 1197822628829136911, guid: bd5c9cf71fdd5924f9bdd96150276426, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: a2074a59db68df4409e9c2204bcdd926, type: 2}
     - target: {fileID: 1197822628831401679, guid: bd5c9cf71fdd5924f9bdd96150276426, type: 3}
       propertyPath: m_Name
       value: building-block-4floor-front
@@ -4040,7 +4083,7 @@ PrefabInstance:
     - target: {fileID: 455908538418105393, guid: 097b57be8da56384dab59f4e721aeeb2, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: caede629d672e5d4894d74679968bcbb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4267,6 +4310,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2657499562769377647, guid: 890abd73182cdf47aab5459b206808bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -60.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657499562769377647, guid: 890abd73182cdf47aab5459b206808bc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 50.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657499562769377647, guid: 890abd73182cdf47aab5459b206808bc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 60.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270112664522800712, guid: 890abd73182cdf47aab5459b206808bc, type: 3}
+      propertyPath: far clip plane
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3270112664522800712, guid: 890abd73182cdf47aab5459b206808bc, type: 3}
       propertyPath: orthographic size
       value: 6.9
@@ -4334,7 +4393,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4853586992320725650, guid: 890abd73182cdf47aab5459b206808bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1606254610}
   m_SourcePrefab: {fileID: 100100000, guid: 890abd73182cdf47aab5459b206808bc, type: 3}
 --- !u!1001 &1898870193
 PrefabInstance:
@@ -4409,10 +4471,14 @@ PrefabInstance:
     - target: {fileID: 1197822628829136911, guid: bd5c9cf71fdd5924f9bdd96150276426, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: caede629d672e5d4894d74679968bcbb, type: 2}
     - target: {fileID: 1197822628831401679, guid: bd5c9cf71fdd5924f9bdd96150276426, type: 3}
       propertyPath: m_Name
       value: building-block-4floor-front (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197822628831401679, guid: bd5c9cf71fdd5924f9bdd96150276426, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1197822628831431407, guid: bd5c9cf71fdd5924f9bdd96150276426, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4806,7 +4872,7 @@ PrefabInstance:
     - target: {fileID: 455908538418105393, guid: 097b57be8da56384dab59f4e721aeeb2, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: a2074a59db68df4409e9c2204bcdd926, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5140,7 +5206,7 @@ PrefabInstance:
     - target: {fileID: 455908538418105393, guid: 097b57be8da56384dab59f4e721aeeb2, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3899fc8e20541f24c843b95476a0b979, type: 2}
+      objectReference: {fileID: 2100000, guid: 7a1a32bb65e9dd649863685be832d439, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
