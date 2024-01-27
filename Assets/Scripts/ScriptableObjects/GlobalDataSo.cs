@@ -35,9 +35,12 @@ public class GlobalDataSo : ScriptableObject
 
     [Header("Prefabs")]
     public SpeechBubble PrefabSpeechBubble;
+    public PanelItem PrefabPanelItem;
 
     [Header("Sounds")]
     public AudioClip SfxSceneTransition;
+    public AudioClip SfxPickupItem;
+    public AudioClip SfxDropItem;
 
     // Global static vars
     public const string TAG_INTERACTABLE = "Interactable";
