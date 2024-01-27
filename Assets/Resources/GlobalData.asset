@@ -18,6 +18,9 @@ MonoBehaviour:
   SpeechBubbleController: {fileID: 5259531508783425358, guid: 5321a7628f4a93e41ac6638cfc5b3220, type: 3}
   PrefabSpeechBubble: {fileID: 5458421839832155032, guid: 11d6bf9bd1a161b409e868428312ece4, type: 3}
   PrefabPanelItem: {fileID: 1954360089585799387, guid: 6a36ffbd2f6d7e040813eb31a88b7507, type: 3}
+  SpawnableCars:
+  - {fileID: 661121120707790041, guid: e04da342ab055e44c993348d84e7b9a5, type: 3}
   SfxSceneTransition: {fileID: 8300000, guid: 9e3eb525b7cc9c344b4fc1a2cbb37cd2, type: 3}
   SfxPickupItem: {fileID: 8300000, guid: 6c2f000cffabebb488140072ccfb4c4a, type: 3}
   SfxDropItem: {fileID: 8300000, guid: cd91bd5b57ae74141beafc5809328c0f, type: 3}
+  SfxRefillLaughMeter: {fileID: 8300000, guid: e66678d77a5b213458a15a61242b55f8, type: 3}

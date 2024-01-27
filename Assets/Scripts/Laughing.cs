@@ -38,6 +38,15 @@ public class Laughing : MonoBehaviour
         }
     }
 
+    public void Refill(float amount)
+    {
+        LaughMeter += amount;
+        if(LaughMeter > LaughMeterMax)
+            LaughMeter = LaughMeterMax;
+
+        AudioController.Instance.PlaySound(GlobalDataSo.Instance.SfxRefillLaughMeter);
+    }
+
     public void StartLaughing()
     {
         if (_laughingActive || LaughMeter <= 0) return;
