@@ -1,5 +1,6 @@
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharController : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class CharController : MonoBehaviour
     private bool _wasMovingBefore;
     private Rigidbody _rigidbody;
     private Animator _animator;
+    private Laughing _laughing;
     
     void Start()
     {
@@ -42,6 +44,7 @@ public class CharController : MonoBehaviour
         _animator = PlayerFigure.GetComponent<Animator>();
         _animator.runtimeAnimatorController = idleAnimation;
         _oldPos = PlayerFigure.position;
+        _laughing = GetComponent<Laughing>();
     }
     
     void Update()
@@ -59,8 +62,11 @@ public class CharController : MonoBehaviour
 
         if (Input.Laugh)
         {
-            // Todo: Mit sinnvollerem Inhalt füllen
-            Debug.Log("All your Base are belong to us!");
+            _laughing.StartLaughing();
+        }
+        else
+        {
+            _laughing.StopLaughing();
         }
         
         _cam.transform.position += _rigidbody.position - _oldPos;

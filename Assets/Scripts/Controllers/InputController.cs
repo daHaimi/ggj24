@@ -19,8 +19,8 @@ public class InputController : MonoBehaviour
     {
         Horizontal = Input.GetAxis("Horizontal");
         Vertical = Input.GetAxis("Vertical");
-        Interact = Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Fire1");
-        Laugh = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2");
+        Interact = Input.GetKey(KeyCode.Return) || Input.GetButton("Fire1");
+        Laugh = Input.GetKey(KeyCode.Space) || Input.GetButton("Fire2");
     }
 
 }
