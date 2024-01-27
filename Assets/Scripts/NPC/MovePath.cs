@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor.Animations;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class MovePath : MonoBehaviour
@@ -11,8 +7,8 @@ public class MovePath : MonoBehaviour
     public LineRenderer line;
     public float waitTimeAtWaypoint = 0;
 
-    public AnimatorController idleAnimation;
-    public AnimatorController walkAnimation;
+    public RuntimeAnimatorController idleAnimation;
+    public RuntimeAnimatorController walkAnimation;
     
     private int waypointIdx;
     private Vector3 target;

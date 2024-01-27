@@ -1,7 +1,5 @@
 using System.Linq;
-using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CharController : MonoBehaviour
 {
@@ -24,8 +22,8 @@ public class CharController : MonoBehaviour
 
     public Transform InteractionMarker;
 
-    public AnimatorController idleAnimation;
-    public AnimatorController runAnimation;
+    public RuntimeAnimatorController idleAnimation;
+    public RuntimeAnimatorController runAnimation;
 
     private Camera _cam;
     private Vector3 _forward, _right, _oldPos;
@@ -85,7 +83,7 @@ public class CharController : MonoBehaviour
         _oldPos = _rigidbody.position;
 
         // visual effect for interaction marker
-        InteractionMarker.Rotate(Vector3.one * Time.deltaTime * 10);
+        InteractionMarker.Rotate(Vector3.one * (Time.deltaTime * 10));
     }
 
     private void FixedUpdate()
