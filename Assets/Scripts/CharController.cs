@@ -82,7 +82,7 @@ public class CharController : MonoBehaviour
     {
         if(Input.Interact)
         {
-            var colliders = Physics.OverlapSphere(transform.position, InteractionRadius);
+            var colliders = Physics.OverlapSphere(PlayerFigure.position, InteractionRadius);
 
             Interactable? interactable = null;
             foreach (Collider collider in colliders)

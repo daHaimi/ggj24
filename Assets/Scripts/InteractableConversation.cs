@@ -37,7 +37,7 @@ public class InteractableConversation : Interactable
         if (_conversationTriggered)
         {
             if (Vector3.Distance(
-                CharController.Instance.transform.position, transform.position)
+                CharController.Instance.PlayerFigure.position, transform.position)
                 > CloseOnDistance)
             {
                 // set to end line = make it close
