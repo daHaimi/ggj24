@@ -11,6 +11,8 @@ public class NpcView : MonoBehaviour
     public float viewDistance = 12.0f;
     public LayerMask layer;
     public UnityEvent hitCallback;
+
+    private uint _gotOne = 0;
     
     void FixedUpdate ()
     {
@@ -29,10 +31,19 @@ public class NpcView : MonoBehaviour
                     viewDistance,
                     layer))
                 {
-                    hitCallback.Invoke();
+                    if (_gotOne <= 0)
+                    {
+                        hitCallback.Invoke();
+                        _gotOne = 5;
+                        return;
+                    }
+                    _gotOne = (_gotOne - 1) % 5;
+                    return;
                 }
         }
-        
+
+        _gotOne = (_gotOne - 1) % 5;
+
     }
     
     private void OnDrawGizmos()
