@@ -32,17 +32,18 @@ public class CharController : MonoBehaviour
     {
         Input = GetComponent<InputController>();
 
+        
         _cam = Camera.main;
         _forward = _cam.transform.forward;
         _forward.y = 0;
         _forward = Vector3.Normalize(_forward);
         _right = Quaternion.Euler(new Vector3(0, 90, 0)) * _forward;
-        _rigidbody = PlayerFigure.GetComponent<Rigidbody>();
+        _rigidbody = PlayerFigure.GetComponentInParent<Rigidbody>();
         _animator = PlayerFigure.GetComponent<Animator>();
         _animator.runtimeAnimatorController = idleAnimation;
         _oldPos = PlayerFigure.position;
     }
-
+    
     void Update()
     {
         Interact();
@@ -56,11 +57,11 @@ public class CharController : MonoBehaviour
             _wasMovingBefore = false;
         }
 
-        _cam.transform.position += PlayerFigure.position - _oldPos;
-        _oldPos = PlayerFigure.position;
+        _cam.transform.position += _rigidbody.position - _oldPos;
+        _oldPos = _rigidbody.position;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         Move();
     }
@@ -74,8 +75,9 @@ public class CharController : MonoBehaviour
         {
             PlayerFigure.rotation = Quaternion.LookRotation(heading);
         }
-
-        _rigidbody.AddForce((heading * MoveSpeed) - _rigidbody.velocity, ForceMode.VelocityChange);
+        var v = (heading * MoveSpeed) - _rigidbody.velocity;
+        v.y = 0;
+        _rigidbody.AddForce(v, ForceMode.VelocityChange);
     }
 
     private void Interact()
