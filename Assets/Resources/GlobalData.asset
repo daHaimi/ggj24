@@ -24,3 +24,4 @@ MonoBehaviour:
   SfxPickupItem: {fileID: 8300000, guid: 6c2f000cffabebb488140072ccfb4c4a, type: 3}
   SfxDropItem: {fileID: 8300000, guid: cd91bd5b57ae74141beafc5809328c0f, type: 3}
   SfxRefillLaughMeter: {fileID: 8300000, guid: e66678d77a5b213458a15a61242b55f8, type: 3}
+  SfxGameOver: {fileID: 8300000, guid: a39db9892a32a4146b2dd9bd8601a72e, type: 3}

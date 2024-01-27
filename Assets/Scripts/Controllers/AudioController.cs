@@ -42,6 +42,9 @@ public class AudioController : BaseSceneConsistentController
     /// <param name="audioClip">Music track to be playe</param>
     public void PlayMusic(AudioClip audioClip)
     {
+        if (audioClip == _audioSourceBgm.clip)
+            return;
+
         if (!gameObject.LeanIsTweening() && _audioSourceBgm.isPlaying)
         {
             var oldVolume = _audioSourceBgm.volume;
@@ -65,9 +68,6 @@ public class AudioController : BaseSceneConsistentController
 
     private void PlayNewTrack(AudioClip audioClip)
     {
-        if (audioClip == _audioSourceBgm.clip)
-            return;
-
         _audioSourceBgm.clip = audioClip;
         _audioSourceBgm.Play();
     }

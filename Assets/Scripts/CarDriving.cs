@@ -21,4 +21,9 @@ public class CarDriving : MonoBehaviour
         if (Vector3.Distance(_initialPos, transform.position) > DestroyAfterDistance)
             Destroy(gameObject);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        GameOverController.CallGameOver();
+    }
 }
