@@ -19,10 +19,8 @@ public class ClippingController : MonoBehaviour
 
     void LateUpdate()
     {
-        var ray = new Ray(this.transform.position, this.transform.forward);
-        // if (Physics.RaycastAll(ray, out var hit))
-
         List<GameObject> currentHits = new();
+        var ray = new Ray(this.transform.position, this.transform.forward);
 
         foreach (RaycastHit hit in Physics.RaycastAll(ray, _playerDistance - 1, _clippingLayerMask))
         {

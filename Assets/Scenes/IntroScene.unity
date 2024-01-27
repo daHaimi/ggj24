@@ -197,6 +197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-beech
       objectReference: {fileID: 0}
+    - target: {fileID: 132534, guid: 35d4951e636d2ad429be57c270484724, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 476174, guid: 35d4951e636d2ad429be57c270484724, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8283
@@ -512,6 +516,10 @@ PrefabInstance:
     - target: {fileID: 124660, guid: 3be346d3e2145b046a53b836c10f1bae, type: 3}
       propertyPath: m_Name
       value: tree-elipse
+      objectReference: {fileID: 0}
+    - target: {fileID: 124660, guid: 3be346d3e2145b046a53b836c10f1bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 464954, guid: 3be346d3e2145b046a53b836c10f1bae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -830,6 +838,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-pyramid (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 159076, guid: 19bb43c8feb4efc4bac72502de58d6b0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 487682, guid: 19bb43c8feb4efc4bac72502de58d6b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 34.39972
@@ -1084,10 +1096,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3270112664522800712, guid: 890abd73182cdf47aab5459b206808bc, type: 3}
-      propertyPath: near clip plane
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4884644210723141216, guid: 890abd73182cdf47aab5459b206808bc, type: 3}
       propertyPath: m_Name
       value: LePlayer
@@ -1148,6 +1156,10 @@ PrefabInstance:
     - target: {fileID: 132534, guid: 35d4951e636d2ad429be57c270484724, type: 3}
       propertyPath: m_Name
       value: tree-beech (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 132534, guid: 35d4951e636d2ad429be57c270484724, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 476174, guid: 35d4951e636d2ad429be57c270484724, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1735,6 +1747,10 @@ PrefabInstance:
     - target: {fileID: 159194, guid: e0892e1ea1bfc4341b9ebc259a36a0c6, type: 3}
       propertyPath: m_Name
       value: tree-simple
+      objectReference: {fileID: 0}
+    - target: {fileID: 159194, guid: e0892e1ea1bfc4341b9ebc259a36a0c6, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 460476, guid: e0892e1ea1bfc4341b9ebc259a36a0c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3215,6 +3231,10 @@ PrefabInstance:
     - target: {fileID: 1000014109055006, guid: 5c9de7283eb7304419a30532403d04e6, type: 3}
       propertyPath: m_Name
       value: tree (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014109055006, guid: 5c9de7283eb7304419a30532403d04e6, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4000013008321660, guid: 5c9de7283eb7304419a30532403d04e6, type: 3}
       propertyPath: m_LocalScale.x

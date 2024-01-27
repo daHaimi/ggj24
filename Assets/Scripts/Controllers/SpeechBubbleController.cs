@@ -41,7 +41,7 @@ public class SpeechBubbleController : BaseSceneConsistentController
     /// <param name="content">Speech bubble text</param>
     /// <param name="height">The height above the character</param>
     /// <param name="hardOverride">Destroy ongoing conversation if necessary and force new one</param>
-    public void PlaceSpeechBubble(GameObject gameObject, string content, int height = 2, bool hardOverride = false)
+    public void PlaceSpeechBubble(GameObject gameObject, string content, float height = 3.5f, bool hardOverride = false)
     {
         // Make sure there isn't already an ongoing conversation
         // Delete ongoing conversation if override is set

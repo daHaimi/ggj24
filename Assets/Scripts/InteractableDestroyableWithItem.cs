@@ -46,7 +46,7 @@ public class InteractableDestroyableWithItem : Interactable
 
     public override void Interact()
     {
-        if (_interactionStarted)
+        if (_interactionStarted || !GameController.Instance.CheckForItem(NecessaryItem))
             return;
 
         _interactionStarted = true;
