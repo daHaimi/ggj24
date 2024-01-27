@@ -1,6 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -9,77 +8,44 @@ public class ClippingController : MonoBehaviour
     public GameObject player;
 
     private float _playerDistance;
-    private int _clippingLayer;
-    private GameObject _clippedObject;
+    private LayerMask _clippingLayerMask;
+    private List<GameObject> _clippedObjects = new();
 
     void Start()
     {
         _playerDistance = Vector3.Distance(player.transform.position, this.transform.position);
-        _clippingLayer = LayerMask.NameToLayer("ClipObject");
+        _clippingLayerMask = LayerMask.GetMask("ClipObject");
     }
-    
+
     void LateUpdate()
     {
         var ray = new Ray(this.transform.position, this.transform.forward);
-        if (Physics.Raycast(ray, out var hit))
+        // if (Physics.RaycastAll(ray, out var hit))
+
+        List<GameObject> currentHits = new();
+
+        foreach (RaycastHit hit in Physics.RaycastAll(ray, _playerDistance - 1, _clippingLayerMask))
         {
             var other = hit.transform.gameObject;
-            if (Vector3.Distance(other.transform.position, this.transform.position) < _playerDistance)
+            currentHits.Add(other);
+
+            if (!_clippedObjects.Contains(other))
             {
-                if (other.layer == _clippingLayer)
-                {
-                    if (_clippedObject != other)
-                    {
-                        _clippedObject = other;
-                        HideObject();
-                    }
-                }
-                else
-                {
-                    ShowObject();
-                    _clippedObject = null;
-                }
+                other.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.ShadowsOnly;
+                _clippedObjects.Add(other);
             }
-            else
-            {
-                ShowObject();
-                _clippedObject = null;
-            }
+
         }
+
+        foreach (GameObject other in _clippedObjects.ToList())
+        {
+            if (currentHits.Contains(other))
+                continue;
+
+            _clippedObjects.Remove(other);
+            other.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.On;
+        }
+
     }
 
-    void HideObject()
-    {
-        if (!_clippedObject)
-            return;
-        
-        _clippedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.ShadowsOnly ;
-        
-        // var objColor = new Color(1, 1, 1, 0.3f);
-        // _clippedObject.GetComponent<MeshRenderer>().material.color = objColor;
-
-
-        // foreach (var material in _clippedObject.GetComponent<MeshRenderer>().materials)
-        // {
-        //     var objColor = new Color(material.color.r, material.color.g, material.color.b, 0.3f);
-        //     material.color = objColor;
-        // }
-    }
-
-    void ShowObject()
-    {
-        if (!_clippedObject)
-            return;
-
-        _clippedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.On ;
-        
-        // var objColor = new Color(1, 1, 1, 1f);
-        // _clippedObject.GetComponent<MeshRenderer>().material.color = objColor;
-        
-        // foreach (var material in _clippedObject.GetComponent<MeshRenderer>().materials)
-        // {
-        //     var objColor = new Color(material.color.r, material.color.g, material.color.b, 1f);
-        //     material.color = objColor;
-        // }
-    }
 }
