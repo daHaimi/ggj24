@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 1482163791704322521}
   - component: {fileID: 7895128218231608554}
   - component: {fileID: 6352561587712646558}
+  - component: {fileID: 3448105244787040025}
   m_Layer: 0
   m_Name: LePlayer
   m_TagString: Untagged
@@ -333,21 +334,6 @@ MonoBehaviour:
   PlayerFigure: {fileID: 8893301321487199480}
   idleAnimation: {fileID: 9100000, guid: b44c5b7b3d0db6c439a4dc52a05321d4, type: 2}
   runAnimation: {fileID: 9100000, guid: ccf868d05c9741448ad5c7631262e3a1, type: 2}
-  laughEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6352561587712646558}
-        m_TargetAssemblyTypeName: Laughing, Assembly-CSharp
-        m_MethodName: StartLaughing
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &7895128218231608554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,9 +368,102 @@ MonoBehaviour:
   - {fileID: 4334996322438075839, guid: 37822549eeca44f508d92049665c2543, type: 3}
   - {fileID: 9037884370851157187, guid: 8089de8a52d1542eb87701759768e901, type: 3}
   - {fileID: 1926444035358962470, guid: 0d789f8ace2664da8bd6352cacd54296, type: 3}
-  OnLaughEnd:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!82 &3448105244787040025
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884644210723141216}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3cf078f25701d1d4eaecdabba5a57633, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &5183615216753512792
 PrefabInstance:
   m_ObjectHideFlags: 0
