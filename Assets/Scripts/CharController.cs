@@ -38,6 +38,9 @@ public class CharController : MonoBehaviour
 
     void Start()
     {
+        // called twice because weird problems
+        Instance = this;
+
         Input = GetComponent<InputController>();
         Laughing = GetComponent<Laughing>();
 
