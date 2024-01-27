@@ -3790,29 +3790,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2136065631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136065626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c6c32b531814a07a32d73c04e2fab8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1378994096}
-  - {fileID: 1162358142}
-  - {fileID: 772987925}
-  - {fileID: 380565270}
-  line: {fileID: 2136065633}
---- !u!120 &2136065633 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
-  m_PrefabInstance: {fileID: 6267955840867058512}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6267955840867058512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3821,6 +3798,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 12435554057297420, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: idleAnimation
+      value: 
+      objectReference: {fileID: 9100000, guid: b44c5b7b3d0db6c439a4dc52a05321d4, type: 2}
+    - target: {fileID: 12435554057297420, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: walkAnimation
+      value: 
+      objectReference: {fileID: 9100000, guid: 5197e6a1fe1a1e548b298d019c7f8a02, type: 2}
+    - target: {fileID: 12435554057297420, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: waitTimeAtWaypoint
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 12435554057297420, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 12435554057297420, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1162358142}
+    - target: {fileID: 12435554057297420, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 772987925}
+    - target: {fileID: 12435554057297420, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 380565270}
+    - target: {fileID: 12435554057297420, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: waypoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1378994096}
     - target: {fileID: 241794199026333931, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Name
       value: NPC
@@ -3855,7 +3864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[0].x
-      value: -0.15
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[0].y
@@ -3863,11 +3872,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[0].z
-      value: -20.09
+      value: -11.33
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[1].x
-      value: -2.1
+      value: 0.97
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[1].y
@@ -3875,11 +3884,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[1].z
-      value: -11.33
+      value: 7.52
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[2].x
-      value: 0.97
+      value: 5.17
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[2].y
@@ -3887,11 +3896,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[2].z
-      value: 7.52
+      value: -7.54
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[3].x
-      value: 5.17
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[3].y
@@ -3899,7 +3908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[3].z
-      value: -7.54
+      value: -20.09
       objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
@@ -3972,9 +3981,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 241794199026333931, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2136065630}
-    - targetCorrespondingSourceObject: {fileID: 241794199026333931, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2136065631}
   m_SourcePrefab: {fileID: 100100000, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
