@@ -108,7 +108,7 @@ public class CharController : MonoBehaviour
     private void Interact()
     {
         var colliders = Physics.OverlapSphere(PlayerFigure.position, InteractionRadius)
-            .OrderBy(x => Vector3.Distance(x.transform.position, PlayerFigure.position));
+            .OrderByDescending(x => Vector3.Distance(x.transform.position, PlayerFigure.position));
         GameObject? colliderGo = null;
         foreach (Collider collider in colliders)
             if (collider.CompareTag(GlobalDataSo.TAG_INTERACTABLE))
