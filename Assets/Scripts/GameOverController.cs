@@ -20,6 +20,6 @@ public class GameOverController : MonoBehaviour
 
     public static void ReturnToLastScene()
     {
-        SceneManager.LoadScene(_lastScene);
+        SceneTransitionController.Instance.TransitionToScene(_lastScene);
     }
 }

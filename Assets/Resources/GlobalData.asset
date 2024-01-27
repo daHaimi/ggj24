@@ -25,3 +25,14 @@ MonoBehaviour:
   SfxDropItem: {fileID: 8300000, guid: cd91bd5b57ae74141beafc5809328c0f, type: 3}
   SfxRefillLaughMeter: {fileID: 8300000, guid: e66678d77a5b213458a15a61242b55f8, type: 3}
   SfxGameOver: {fileID: 8300000, guid: a39db9892a32a4146b2dd9bd8601a72e, type: 3}
+  SfxHumans:
+  - {fileID: 8300000, guid: 88350a6585cbce643898fefa7fc256c1, type: 3}
+  - {fileID: 8300000, guid: d10a04777606e814d9b3aed8d343c847, type: 3}
+  - {fileID: 8300000, guid: 68a27159f13b60a409378fd7cc0f6edb, type: 3}
+  - {fileID: 8300000, guid: ec9e46440196a7a43bc19723aa267462, type: 3}
+  - {fileID: 8300000, guid: 23e608d21575b6f46a7c6409845a7a1a, type: 3}
+  - {fileID: 8300000, guid: 2f301b532e11c644d806df8985404fca, type: 3}
+  - {fileID: 8300000, guid: 15ef60101c5b62242b0ad55f6bc4fd02, type: 3}
+  - {fileID: 8300000, guid: 0b3bb25a777bb9f498cabd10007d2436, type: 3}
+  - {fileID: 8300000, guid: f6c596e092b33f148862b4c3bc136fc3, type: 3}
+  - {fileID: 8300000, guid: bbb95e243520faa44853c2e1b1db43b9, type: 3}

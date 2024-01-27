@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -23,5 +27,12 @@ namespace Assets.Scripts
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public static T PickRandom<T>(this IEnumerable<T> list)
+        {
+            return list.ElementAt(UnityEngine.Random.Range(0, list.Count()));
+        }
     }
 }

@@ -44,6 +44,7 @@ public class GlobalDataSo : ScriptableObject
     public AudioClip SfxDropItem;
     public AudioClip SfxRefillLaughMeter;
     public AudioClip SfxGameOver;
+    public List<AudioClip> SfxHumans;
 
     // Global static vars
     public const string TAG_INTERACTABLE = "Interactable";

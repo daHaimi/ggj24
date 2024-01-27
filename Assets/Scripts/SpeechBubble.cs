@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,10 @@ public class SpeechBubble : MonoBehaviour
     {
         _text = GetComponentInChildren<Text>();
         _text.text = Content;
+
+        AudioController.Instance.PlaySound(
+                GlobalDataSo.Instance.SfxHumans.PickRandom()
+            );
     }
 
     /// <summary>
