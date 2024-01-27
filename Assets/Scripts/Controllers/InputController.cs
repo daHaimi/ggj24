@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InputController : MonoBehaviour
+public class InputController : MonoBehaviour
 {
     public bool Interact { get;  protected set; }
     public bool Laugh { get; protected set; }
@@ -17,6 +15,12 @@ public abstract class InputController : MonoBehaviour
         CalculateInput();
     }
 
-    protected abstract void CalculateInput();
+    protected void CalculateInput()
+    {
+        Horizontal = Input.GetAxis("Horizontal");
+        Vertical = Input.GetAxis("Vertical");
+        Interact = Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Fire1");
+        Laugh = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2");
+    }
 
 }

@@ -57,6 +57,12 @@ public class CharController : MonoBehaviour
             _wasMovingBefore = false;
         }
 
+        if (Input.Laugh)
+        {
+            // Todo: Mit sinnvollerem Inhalt füllen
+            Debug.Log("All your Base are belong to us!");
+        }
+        
         _cam.transform.position += _rigidbody.position - _oldPos;
         _oldPos = _rigidbody.position;
     }
