@@ -130,7 +130,7 @@ public class CharController : MonoBehaviour
     {
         if (!_laughing.IsLaughing)
         {
-            SceneManager.LoadScene("CityScene");
+            GameOverController.CallGameOver();
         }
     }
 
