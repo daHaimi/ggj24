@@ -3120,6 +3120,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1790552031944936, guid: a951568468573449abb7468d0a121b34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2040097112}
+    - targetCorrespondingSourceObject: {fileID: 1790552031944936, guid: a951568468573449abb7468d0a121b34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2040097116}
   m_SourcePrefab: {fileID: 100100000, guid: a951568468573449abb7468d0a121b34, type: 3}
 --- !u!1001 &321894704
 PrefabInstance:
@@ -6632,6 +6635,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8872676378828701505, guid: 6df05854fc2850e40b98738424445800, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1182091007}
+    - targetCorrespondingSourceObject: {fileID: 8872676378828701505, guid: 6df05854fc2850e40b98738424445800, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1182091011}
   m_SourcePrefab: {fileID: 100100000, guid: 6df05854fc2850e40b98738424445800, type: 3}
 --- !u!4 &672840328 stripped
 Transform:
@@ -9434,6 +9440,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2349463408242185005, guid: 966c7562dc06f7348a900f48f72f1e19, type: 3}
   m_PrefabInstance: {fileID: 1560491862}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &966103537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 966103539}
+  - component: {fileID: 966103538}
+  m_Layer: 0
+  m_Name: MusicPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &966103538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966103537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfed52e3275aaa4418d5ec194e1d9152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicTrack: {fileID: 8300000, guid: 9bbda12f5955f334eae99b8659aa9ef3, type: 3}
+--- !u!4 &966103539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966103537}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.370533, y: 41.246174, z: 27.173738}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &966706550 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 153411656464879968, guid: 4e2c61b68a6584740b7b1fe3a4b4d4c2, type: 3}
@@ -10546,8 +10597,33 @@ MonoBehaviour:
   - Hop in and let's get out of here.
   OnConversationEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1182091011}
+        m_TargetAssemblyTypeName: InteractableSceneChange, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   CloseOnDistance: 3
+--- !u!114 &1182091011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182091003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95835de414bf8f84f84323061d3d3d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetScene: SpeedwayScene
 --- !u!1001 &1183768654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18733,6 +18809,34 @@ MonoBehaviour:
   OnConversationEnd:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2040097116}
+        m_TargetAssemblyTypeName: TransitionExecutor, Assembly-CSharp
+        m_MethodName: PlayTransition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CloseOnDistance: 3
+--- !u!114 &2040097116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040097107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d628788b9d3700941b6ac09f9fa9a0c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCutPointReached:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 2040097107}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -18745,7 +18849,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  CloseOnDistance: 3
 --- !u!1 &2040602696
 GameObject:
   m_ObjectHideFlags: 0
@@ -20310,3 +20413,4 @@ SceneRoots:
   - {fileID: 1330737929}
   - {fileID: 593541131}
   - {fileID: 337446244}
+  - {fileID: 966103539}
