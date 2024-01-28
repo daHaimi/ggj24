@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: 6eedfb8500dda8445ab8ff9bb10f8304
+  - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: ab12988e2bc39454aadfa93aa660c968
   - enabled: 1
@@ -14,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CityScene.unity
     guid: dfdb54255ebd84c409c469bb5b0127de
+  - enabled: 1
+    path: Assets/Scenes/SpeedwayScene.unity
+    guid: 63af3969eba37f347a1917a939744d99
+  - enabled: 1
+    path: Assets/Scenes/HarbourScene.unity
+    guid: 2e9fa9a53661a6845b3b4ccb55a793e6
+  - enabled: 1
+    path: Assets/Scenes/OutroScene.unity
+    guid: b47c473dd96e66948872ab0c82ee370e
   m_configObjects: {}
