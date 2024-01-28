@@ -136,8 +136,11 @@ public class NpcView : MonoBehaviour
                     viewDistance))
                 { 
                     var x = (1 << hitInfo.collider.gameObject.layer) & layer;
+                    Debug.Log(hitInfo.collider.gameObject.layer);
+                    Debug.Log(layer);
                     if (x != 0 && _gotOne <= 0)
                     {
+                        Debug.Log("asdfasdf");
                         hitInfo.transform.parent.gameObject.SendMessage("Busted", gameObject);
                         hitCallback.Invoke();
                         _gotOne = 5;
