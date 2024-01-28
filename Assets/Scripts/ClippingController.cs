@@ -30,6 +30,7 @@ public class ClippingController : MonoBehaviour
             if (!_clippedObjects.Contains(other))
             {
                 other.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.ShadowsOnly;
+                _createBasement(other);
                 _clippedObjects.Add(other);
             }
 
@@ -40,10 +41,27 @@ public class ClippingController : MonoBehaviour
             if (currentHits.Contains(other))
                 continue;
 
+            Destroy(other.GetComponentInChildren<ClippingBasement>().gameObject);
             _clippedObjects.Remove(other);
             other.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.On;
         }
 
+    }
+
+    private void _createBasement(GameObject other)
+    {
+        var basement = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        basement.AddComponent<ClippingBasement>();
+        var t = basement.transform;
+        t.parent = other.transform;
+        t.localPosition = new Vector3(0, 0, 0);
+        t.localRotation = Quaternion.Euler(0, 0, 0);
+        basement.GetComponent<MeshFilter>().mesh = other.GetComponent<MeshFilter>().mesh;
+        t.localScale = new Vector3(1, .02f, 1);
+        Material baseMat = Resources.Load<Material>("Basement");
+        var mats = Enumerable.Repeat(baseMat, other.GetComponent<MeshRenderer>().materials.Length).ToArray();
+        basement.GetComponent<MeshRenderer>().receiveShadows = false;
+        basement.GetComponent<MeshRenderer>().materials = mats;
     }
 
 }
