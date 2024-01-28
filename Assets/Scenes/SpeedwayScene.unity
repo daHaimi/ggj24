@@ -2553,6 +2553,7 @@ MonoBehaviour:
   CarSpeed: 5
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!1001 &706193277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2610,6 +2611,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95169dbcb9b934c3380ca9f90b03e212, type: 3}
+--- !u!1 &708141743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 708141744}
+  - component: {fileID: 708141745}
+  m_Layer: 0
+  m_Name: car-formula-base (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &708141744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708141743}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -53.4, y: 0, z: -3.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5665272792820120581}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &708141745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708141743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437199923ffecd54a9969306b21abe7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarSpeed: 8
+  SpawnIntervalRangeFrom: 12
+  SpawnIntervalRangeTo: 20
+  SpawnOnlyThis: {fileID: 2858607893129337931, guid: e5ba02801a614251991af6770d46eca7, type: 3}
 --- !u!1001 &718923243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2832,6 +2881,7 @@ MonoBehaviour:
   CarSpeed: 3
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!1001 &789797607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2998,6 +3048,7 @@ MonoBehaviour:
   CarSpeed: 5
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!1001 &845406787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3757,6 +3808,7 @@ MonoBehaviour:
   CarSpeed: 10
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!4 &1049161538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5330958750322669841, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
@@ -3937,6 +3989,7 @@ MonoBehaviour:
   CarSpeed: 11
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!1 &1134055513
 GameObject:
   m_ObjectHideFlags: 0
@@ -4644,6 +4697,7 @@ MonoBehaviour:
   CarSpeed: 8
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!1001 &1295649101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4933,6 +4987,7 @@ MonoBehaviour:
   CarSpeed: 9
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!1001 &1311978953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6469,6 +6524,7 @@ MonoBehaviour:
   CarSpeed: 8
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!1001 &1704451414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7409,6 +7465,7 @@ MonoBehaviour:
   CarSpeed: 7
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!1001 &1886753925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8000,6 +8057,7 @@ MonoBehaviour:
   CarSpeed: 2
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!1 &2040602696
 GameObject:
   m_ObjectHideFlags: 0
@@ -8184,6 +8242,7 @@ MonoBehaviour:
   CarSpeed: 5
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!1001 &2093191390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8658,6 +8717,7 @@ MonoBehaviour:
   CarSpeed: 3
   SpawnIntervalRangeFrom: 4
   SpawnIntervalRangeTo: 10
+  SpawnOnlyThis: {fileID: 0}
 --- !u!4 &5665272792820120581
 Transform:
   m_ObjectHideFlags: 0
@@ -8676,6 +8736,7 @@ Transform:
   - {fileID: 2035868153}
   - {fileID: 1876446368}
   - {fileID: 843465621}
+  - {fileID: 708141744}
   - {fileID: 2072343308}
   - {fileID: 765949499}
   - {fileID: 1700205210}
