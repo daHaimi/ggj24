@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharController : MonoBehaviour
 {
@@ -122,6 +123,14 @@ public class CharController : MonoBehaviour
             Interactable? interactable = null;
             interactable = colliderGo?.gameObject.GetComponent<Interactable>();
             interactable?.Interact();
+        }
+    }
+
+    public void Busted(GameObject by)
+    {
+        if (!_laughing.IsLaughing)
+        {
+            SceneManager.LoadScene("CityScene");
         }
     }
 

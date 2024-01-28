@@ -17,7 +17,11 @@ public class Laughing : MonoBehaviour
     public float LaughMeterMax = 10;
     public float LaughMeter = 10;
 
-    private bool _laughingActive = false;
+    public bool IsLaughing
+    {
+        get;
+        private set;
+    }
     private GameObject _actualSmiley;
 
     private AudioSource _audioSource;
@@ -30,7 +34,7 @@ public class Laughing : MonoBehaviour
 
     void Update()
     {
-        if (_laughingActive)
+        if (IsLaughing)
         {
             LaughMeter -= Time.deltaTime;
             if (LaughMeter <= 0)
@@ -49,11 +53,11 @@ public class Laughing : MonoBehaviour
 
     public void StartLaughing()
     {
-        if (_laughingActive || LaughMeter <= 0) return;
+        if (IsLaughing || LaughMeter <= 0) return;
 
         _audioSource.Play();
 
-        _laughingActive = true;
+        IsLaughing = true;
         _actualSmiley = Instantiate(contents[Random.Range(0, contents.Count)], Vector3.zero, Quaternion.identity, smileyCanvas.GetComponent<RectTransform>());
         var rectTransform = _actualSmiley.GetComponent<RectTransform>();
         rectTransform.localPosition = Vector3.zero;
@@ -62,11 +66,11 @@ public class Laughing : MonoBehaviour
 
     public void StopLaughing()
     {
-        if (!_laughingActive) return;
+        if (!IsLaughing) return;
 
         _audioSource.Pause();
 
-        _laughingActive = false;
+        IsLaughing = false;
         Destroy(_actualSmiley);
     }
 

@@ -23,7 +23,6 @@ public class MovePath : MonoBehaviour
     {
         _animator = GetComponentInChildren<Animator>();
         _childTransform = _animator.transform;
-        Debug.Log(_childTransform.gameObject.name);
         agent = GetComponent<NavMeshAgent>();
         target = waypoints[waypointIdx].position;
         UpdateDestination();

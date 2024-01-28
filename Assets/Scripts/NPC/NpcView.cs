@@ -134,10 +134,11 @@ public class NpcView : MonoBehaviour
                     Quaternion.Euler(_vStartAngle + (j * verticalAngle), _hStartAngle + (i * _hAnglePerStep), 0) * forward,
                     out RaycastHit hitInfo,
                     viewDistance))
-                {
-                    if (hitInfo.transform.gameObject.layer == layer && _gotOne <= 0)
+                { 
+                    var x = (1 << hitInfo.collider.gameObject.layer) & layer;
+                    if (x != 0 && _gotOne <= 0)
                     {
-                        Debug.Log($"Du wurdest von {gameObject.name} gesehen!");
+                        hitInfo.transform.parent.gameObject.SendMessage("Busted", gameObject);
                         hitCallback.Invoke();
                         _gotOne = 5;
                         return;
