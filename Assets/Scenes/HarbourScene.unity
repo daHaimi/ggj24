@@ -5960,6 +5960,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 187759968114017673, guid: 38bf6f54c72c2d74494003aeb4d77ca2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 627075599}
+    - targetCorrespondingSourceObject: {fileID: 187759968114017673, guid: 38bf6f54c72c2d74494003aeb4d77ca2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 627075603}
   m_SourcePrefab: {fileID: 100100000, guid: 38bf6f54c72c2d74494003aeb4d77ca2, type: 3}
 --- !u!1 &627075598 stripped
 GameObject:
@@ -5985,8 +5988,33 @@ MonoBehaviour:
   - We're leaving soon...
   OnConversationEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 627075603}
+        m_TargetAssemblyTypeName: InteractableSceneChange, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   CloseOnDistance: 3
+--- !u!114 &627075603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627075598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95835de414bf8f84f84323061d3d3d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetScene: OutroScene
 --- !u!1001 &627343839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9755,7 +9783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203471062225053946, guid: e6c5f57cdd2c2a2409a68d8e1e760ae0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7546922947333239360, guid: e6c5f57cdd2c2a2409a68d8e1e760ae0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19009,7 +19037,7 @@ Transform:
   m_GameObject: {fileID: 1984520016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.14, y: 0, z: 10.09}
+  m_LocalPosition: {x: 8.14, y: 0, z: 11.12}
   m_LocalScale: {x: 73.42, y: 7.98, z: 0.39}
   m_ConstrainProportionsScale: 0
   m_Children: []
