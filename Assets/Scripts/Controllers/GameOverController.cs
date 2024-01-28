@@ -8,14 +8,19 @@ public class GameOverController : MonoBehaviour
 {
     private static string _lastScene;
 
+    private float _cooldown = 1f;
+
     void Start()
     {
         AudioController.Instance.PlaySound(GlobalDataSo.Instance.SfxGameOver);
     }
 
-    private void Update()
+    void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if(_cooldown > 0)
+            _cooldown -= Time.deltaTime;
+
+        if (_cooldown <= 0 && Input.GetButtonDown("Fire1"))
         {
             ReturnToLastScene();
         }
