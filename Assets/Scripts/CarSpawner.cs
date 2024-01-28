@@ -9,28 +9,25 @@ public class CarSpawner : MonoBehaviour
     public float SpawnIntervalRangeTo = 6f;
 
     private bool _firstRun = true;
+    private float _timer = 0f;
 
-    void Start()
+    void Update()
     {
-        StartCoroutine(SpawnCars());
+        _timer += Time.deltaTime;
+
+        if (_firstRun || _timer >= Random.Range(SpawnIntervalRangeFrom, SpawnIntervalRangeTo))
+        {
+            _firstRun = false;
+            _timer = 0f;
+
+            SpawnCar();
+        }
     }
 
-    IEnumerator SpawnCars()
+    void SpawnCar()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(
-
-                _firstRun ? 0 :
-                Random.Range(SpawnIntervalRangeTo, SpawnIntervalRangeTo)
-
-                );
-
-            _firstRun = false;
-
-            int randomIndex = Random.Range(0, GlobalDataSo.Instance.SpawnableCars.Count);
-            var car = Instantiate(GlobalDataSo.Instance.SpawnableCars[randomIndex], transform.position, transform.rotation);
-            car.GetComponent<CarDriving>().Speed = CarSpeed * 1.5f; //multiplier because I'm lazy
-        }
+        int randomIndex = Random.Range(0, GlobalDataSo.Instance.SpawnableCars.Count);
+        var car = Instantiate(GlobalDataSo.Instance.SpawnableCars[randomIndex], transform.position, transform.rotation);
+        car.GetComponent<CarDriving>().Speed = CarSpeed * 1.5f; // multiplier because I'm lazy
     }
 }
