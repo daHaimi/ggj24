@@ -63,7 +63,9 @@ namespace EasyTransition
                 return;
             }
 
-            runningTransition = true;
+            // Stupid fix for transitions not working
+            // look here if there's problems changing scenes
+            //runningTransition = true;
             StartCoroutine(Timer(sceneName, startDelay, transition));
         }
 
