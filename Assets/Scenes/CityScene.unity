@@ -4267,6 +4267,10 @@ PrefabInstance:
       propertyPath: viewDistance
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2534511663450302248, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: horizontalAngle
+      value: 110
+      objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.size
       value: 4
@@ -4318,6 +4322,10 @@ PrefabInstance:
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[3].z
       value: 12.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457049048011873365, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: m_Speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5330958750322669841, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4582,7 +4590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2534511663450302248, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: scanDensity
-      value: 5
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2534511663450302248, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: layer.m_Bits
@@ -4598,7 +4606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2534511663450302248, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: horizontalAngle
-      value: 58.5
+      value: 150.6
       objectReference: {fileID: 0}
     - target: {fileID: 4457049048011873365, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Enabled
@@ -7438,6 +7446,10 @@ PrefabInstance:
       propertyPath: viewDistance
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2534511663450302248, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: horizontalAngle
+      value: 110
+      objectReference: {fileID: 0}
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.size
       value: 4
@@ -7489,6 +7501,10 @@ PrefabInstance:
     - target: {fileID: 2561290319156269580, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Positions.Array.data[3].z
       value: 27.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457049048011873365, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: m_Speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5330958750322669841, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9424,6 +9440,10 @@ PrefabInstance:
     - target: {fileID: 4457049048011873365, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_Height
       value: 0.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457049048011873365, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 5330958750322669841, guid: 38dace08cccf9c720a686824a253fd7c, type: 3}
       propertyPath: m_LocalPosition.x
