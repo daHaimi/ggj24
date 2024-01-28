@@ -143,12 +143,16 @@ public class CharController : MonoBehaviour
             InteractionMarker.gameObject.LeanScale(Vector3.zero, 0.25f);
             InteractionMarker.gameObject.LeanMove(PlayerFigure.transform.position + new Vector3(0, 10, 0), 0.25f);
         }
-        else if (position != _currentInteractionMarkerSpot)
+        else if (position + new Vector3(0, 1, 0) != _currentInteractionMarkerSpot 
+            && !InteractionMarker.gameObject.LeanIsTweening()
+            && Vector3.Distance(position.Value + new Vector3(0, 1, 0), InteractionMarker.position) > 1.1f)
         {
             InteractionMarker.gameObject.LeanCancel();
             InteractionMarker.gameObject.LeanScale(Vector3.one * 0.5f, 0.25f);
             InteractionMarker.gameObject.LeanMove(position.Value + new Vector3(0, 1, 0), 0.25f)
                 .setEaseOutSine();
+
+            AudioController.Instance.PlaySound(GlobalDataSo.Instance.SfxMarkerBeep);
         }
     }
 }

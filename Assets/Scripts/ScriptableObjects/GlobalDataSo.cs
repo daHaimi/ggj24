@@ -42,6 +42,7 @@ public class GlobalDataSo : ScriptableObject
     public AudioClip SfxSceneTransition;
     public AudioClip SfxPickupItem;
     public AudioClip SfxDropItem;
+    public AudioClip SfxMarkerBeep;
     public AudioClip SfxRefillLaughMeter;
     public AudioClip SfxGameOver;
     public List<AudioClip> SfxHumans;
