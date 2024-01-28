@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,14 @@ public class GameOverController : MonoBehaviour
     void Start()
     {
         AudioController.Instance.PlaySound(GlobalDataSo.Instance.SfxGameOver);
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            ReturnToLastScene();
+        }
     }
 
     public static void CallGameOver()
