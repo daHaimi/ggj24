@@ -81,6 +81,11 @@ public class GameController : BaseSceneConsistentController
     {
         return CollectedItems.FirstOrDefault(x => x.Title == itemTitle);
     }
+
+    public IEnumerable<ItemSo> GetAllCollectedItems()
+    {
+        return CollectedItems;
+    }
     #endregion
 
 }

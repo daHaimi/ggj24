@@ -34,6 +34,10 @@ public class UiIngameController : MonoBehaviour
     {
         // Scale to 0 so we can animate lazily later
         _sliderItemUsage.transform.localScale = Vector3.zero;
+
+        // Fill items that already exist on scene startup
+        foreach (var item in GameController.Instance.GetAllCollectedItems())
+            AddItemIcon(item);
     }
 
     void LateUpdate()
