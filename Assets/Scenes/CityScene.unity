@@ -6629,40 +6629,15 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8872676378828701507, guid: 6df05854fc2850e40b98738424445800, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 8872676378828701505, guid: 6df05854fc2850e40b98738424445800, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 672840330}
+      addedObject: {fileID: 1182091007}
   m_SourcePrefab: {fileID: 100100000, guid: 6df05854fc2850e40b98738424445800, type: 3}
 --- !u!4 &672840328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8872676378828530465, guid: 6df05854fc2850e40b98738424445800, type: 3}
   m_PrefabInstance: {fileID: 672840327}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &672840329 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8872676378828701507, guid: 6df05854fc2850e40b98738424445800, type: 3}
-  m_PrefabInstance: {fileID: 672840327}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &672840330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672840329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d01c7a8ce0de7ad4e98707f3b089b9b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contentLines:
-  - Good. You made it.
-  - I was getting worried.
-  - Hopp in and let's get out of here.
-  OnConversationEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  CloseOnDistance: 3
 --- !u!4 &682685387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 455908538416336593, guid: 097b57be8da56384dab59f4e721aeeb2, type: 3}
@@ -10548,6 +10523,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1197822628831431407, guid: bd5c9cf71fdd5924f9bdd96150276426, type: 3}
   m_PrefabInstance: {fileID: 1899343789}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1182091003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8872676378828701505, guid: 6df05854fc2850e40b98738424445800, type: 3}
+  m_PrefabInstance: {fileID: 672840327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1182091007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182091003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01c7a8ce0de7ad4e98707f3b089b9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentLines:
+  - Good. You made it.
+  - I was getting worried.
+  - Hop in and let's get out of here.
+  OnConversationEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  CloseOnDistance: 3
 --- !u!1001 &1183768654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12640,7 +12640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4205763197477455772, guid: 868973a12cf1dfd42b1086526497421b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8011004351923369602, guid: 868973a12cf1dfd42b1086526497421b, type: 3}
       propertyPath: m_LocalScale.x
@@ -13014,6 +13014,10 @@ PrefabInstance:
     - target: {fileID: 4205763197477455772, guid: 868973a12cf1dfd42b1086526497421b, type: 3}
       propertyPath: m_Name
       value: fence Prefab (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205763197477455772, guid: 868973a12cf1dfd42b1086526497421b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8011004351923369602, guid: 868973a12cf1dfd42b1086526497421b, type: 3}
       propertyPath: m_LocalPosition.x
